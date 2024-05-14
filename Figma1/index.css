@@ -1,0 +1,175 @@
+/* css reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  line-height: calc(1em + 0.5rem);
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+:root {
+  --primary-white: #ffffff;
+  --primary-blue: #061037;
+  --primary-orange: #fd7403;
+
+  --btn-text-color: var(--primary-blue);
+  --btn-background-color: var(--primary-white);
+
+  --font-normal: 400;
+  --font-light-bold: 500;
+  --font-bold: 600;
+  --font-bolder: 700;
+
+  --font-small: 18px;
+  --font-normal: 20px;
+  --font-medium: 34px;
+  --font-big: 48px;
+  --font-bigger: 72px;
+
+  --flex-dir: column;
+}
+
+body {
+  font-family: "Maven Pro", sans-serif;
+}
+.fw-bolder {
+  font-weight: var(--font-bolder);
+}
+.fw-normal {
+  font-weight: var(--font-normal);
+}
+.fs-normal {
+  font-size: var(--font-normal);
+}
+.fs-bigger {
+  font-size: var(--font-bigger);
+}
+.w-26 {
+  max-width: 100%;
+}
+.ff-lato {
+  font-family: "Lato", sans-serif;
+}
+.mv-1 {
+  margin: 2rem 0;
+}
+.container {
+  width: 95%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.btn {
+  font-size: 14px;
+  padding: 0.5em 1.7em;
+  border: none;
+  background: none;
+  cursor: pointer;
+  background-color: var(--btn-background-color);
+  color: var(--btn-text-color);
+}
+.btn-ascent {
+  --btn-background-color: var(--primary-orange);
+  --btn-text-color: var(--primary-white);
+}
+header {
+  background-color: var(--primary-white);
+  margin-top: 1rem;
+}
+/* modification needed */
+.logo {
+  height: 5vh;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+.brand-heading {
+  font-weight: var(--font-bold);
+  font-size: var(--font-small);
+  color: var(--primary-blue);
+}
+.flex-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-responsive {
+  flex-direction: var(--flex-dir);
+}
+.list-items {
+  display: none;
+  list-style: none;
+  /* max-width: 360px; */
+}
+@media screen and (max-width: 1120px) {
+  :root {
+    --font-normal: 350;
+    --font-light-bold: 450;
+    --font-bold: 550;
+    --font-bolder: 650;
+
+    --font-small: 16px;
+    --font-normal: 18px;
+    --font-medium: 28px;
+    --font-big: 40px;
+    --font-bigger: 58px;
+  }
+}
+@media screen and (min-width: 1120px) {
+  .flex-responsive {
+    --flex-dir: row;
+  }
+  .list-items {
+    display: flex;
+    gap: 2rem;
+  }
+  .brand-heading {
+    font-weight: var(--font-bolder);
+    font-size: var(--font-medium);
+    color: var(--primary-blue);
+  }
+  .btn {
+    font-size: 16px;
+  }
+  .w-26 {
+    max-width: 26%;
+  }
+}
+.list-item {
+  cursor: pointer;
+  font-size: var(--font-normal);
+  font-weight: var(--font-small);
+}
+.list-item:first-child {
+  color: var(--primary-blue);
+  font-weight: var(--font-bolder);
+}
+.section-img {
+  max-width: 50%;
+  max-height: 40.68rem;
+  object-fit: cover;
+}
