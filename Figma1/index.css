@@ -36,6 +36,7 @@ h6 {
   --primary-white: #ffffff;
   --primary-blue: #061037;
   --primary-orange: #fd7403;
+  --secondary-white: #ffffffbf;
 
   --btn-text-color: var(--primary-blue);
   --btn-background-color: var(--primary-white);
@@ -57,17 +58,42 @@ h6 {
 body {
   font-family: "Maven Pro", sans-serif;
 }
+/* utility classes */
+.bg-blue {
+  background-color: var(--primary-blue);
+}
 .fw-bolder {
   font-weight: var(--font-bolder);
+}
+.fw-bold {
+  font-weight: var(--font-bold);
 }
 .fw-normal {
   font-weight: var(--font-normal);
 }
+.fs-small {
+  font-size: var(--font-small);
+}
 .fs-normal {
   font-size: var(--font-normal);
 }
+.fs-big {
+  font-size: var(--font-big);
+}
 .fs-bigger {
   font-size: var(--font-bigger);
+}
+.pt-1 {
+  padding-top: 1em;
+}
+.p-2 {
+  padding: 2em;
+}
+.mw-45 {
+  max-width: 45%;
+}
+.m-auto {
+  margin: 0 auto;
 }
 .w-26 {
   max-width: 100%;
@@ -78,11 +104,23 @@ body {
 .mv-1 {
   margin: 2rem 0;
 }
+.color-w {
+  color: var(--primary-white);
+}
+.color-sw {
+  color: var(--secondary-white);
+}
+.ta-center {
+  text-align: center;
+}
+.d-block {
+  display: block;
+}
 .container {
   width: 95%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 1.3em;
 }
 .btn {
   font-size: 14px;
@@ -97,6 +135,12 @@ body {
   --btn-background-color: var(--primary-orange);
   --btn-text-color: var(--primary-white);
 }
+.btn-tertiary {
+  --btn-background-color: var(--primary-blue);
+  --btn-text-color: var(--primary-white);
+}
+
+/* general styles */
 header {
   background-color: var(--primary-white);
   margin-top: 1rem;
@@ -125,7 +169,7 @@ header {
   list-style: none;
   /* max-width: 360px; */
 }
-@media screen and (max-width: 1120px) {
+@media screen and (max-width: 950px) {
   :root {
     --font-normal: 350;
     --font-light-bold: 450;
@@ -137,6 +181,9 @@ header {
     --font-medium: 28px;
     --font-big: 40px;
     --font-bigger: 58px;
+  }
+  .mw-45 {
+    max-width: 70%;
   }
 }
 @media screen and (min-width: 1120px) {
@@ -172,4 +219,11 @@ header {
   max-width: 50%;
   max-height: 40.68rem;
   object-fit: cover;
+}
+.cards{
+  list-style: none;
+}
+.card{
+  height: 478px;
+  max-width: 270px;
 }
