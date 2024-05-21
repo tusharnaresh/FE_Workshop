@@ -127,10 +127,10 @@ body {
 .color-sw {
   color: var(--secondary-white);
 }
-.color-g{
+.color-grey{
   color: var(--primary-grey);
 }
-.color-o{
+.color-orange{
   color: var(--primary-orange);
 }
 .ta-center {
