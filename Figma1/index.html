@@ -18,11 +18,12 @@
   </head>
   <body>
     <header>
-      <div class="container flex-center">
-        <div class="flex-center">
+      <div class="container flex-center block-mobile">
+        <div class="flex-center justify-start">
           <img class="logo" src="./assets/logo.png" alt="ServiceForge" />
           <h2 class="brand-heading">ServiceForge</h2>
         </div>
+        <div class="menu-items">
         <nav>
           <ul class="flex-center list-items">
             <li class="list-item">Home</li>
@@ -32,11 +33,13 @@
             <li class="list-item">Pricing</li>
           </ul>
         </nav>
-        <div>
+        <div class="nav-btns"> 
           <button class="btn">Log in</button>
           <button class="btn btn-accent">Sign Up</button>
         </div>
       </div>
+      </div>
+    <a href="#" class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></a>
     </header>
     <main>
       <section>
@@ -171,4 +174,5 @@
       </section>
     </main>
   </body>
+  <script src="./index.js"></script>
 </html>
