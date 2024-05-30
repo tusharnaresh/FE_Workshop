@@ -283,6 +283,12 @@ header {
 .active{
   display: flex;
 }
+.active .list-item{
+  padding: 0.5em;
+}
+.active .btn{
+  margin: 0.5rem;
+}
 .list-items{
   flex-direction: column;
   list-style: none;
