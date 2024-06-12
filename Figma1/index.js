@@ -12,8 +12,9 @@ const slider = document.querySelector('.slider');
 const arrowButtons = document.querySelectorAll('[data-index-change]');
 let currIndex = 0;
 function slide(nextIndex) {
-  if (nextIndex < 0) nextIndex = imgs.length - 1;
-  if (nextIndex >= imgs.length) nextIndex = 0;
+  if (nextIndex < 0 || nextIndex >= imgs.length){
+    return;
+  }
   slider.style.transform = `translateX(-${(nextIndex / imgs.length) * 100}%)`;
   currIndex = nextIndex;
 }

@@ -45,11 +45,6 @@ h6 {
   --btn-text-color: var(--primary-blue);
   --btn-background-color: var(--primary-white);
 
-  --font-normal: 400;
-  --font-light-bold: 500;
-  --font-bold: 600;
-  --font-bolder: 700;
-
   --font-small: 18px;
   --font-normal: 20px;
   --font-medium: 34px;
@@ -67,16 +62,16 @@ body {
   background-color: var(--primary-blue);
 }
 .fw-light-bold{
-  font-weight: var(--font-light-bold);
+  font-weight: 500;
 }
 .fw-bolder {
-  font-weight: var(--font-bolder);
+  font-weight: 700;
 }
 .fw-bold {
-  font-weight: var(--font-bold);
+  font-weight: 600;
 }
 .fw-normal {
-  font-weight: var(--font-normal);
+  font-weight: 400;
 }
 .fs-small {
   font-size: var(--font-small);
@@ -99,7 +94,7 @@ body {
 .p-2 {
   padding: 2em;
 }
-.mw-45 {
+.lg-mw-45 {
   max-width: 45%;
 }
 .m-auto {
@@ -175,7 +170,7 @@ header {
   margin-right: 1rem;
 }
 .brand-heading {
-  font-weight: var(--font-bold);
+  font-weight: 600;
   font-size: var(--font-small);
   color: var(--primary-blue);
 }
@@ -207,7 +202,7 @@ header {
 }
 .list-item:first-child {
   color: var(--primary-blue);
-  font-weight: var(--font-bolder);
+  font-weight:700;
 }
 .section-img {
   max-width: 50%;
@@ -261,7 +256,7 @@ header {
   position: absolute;
   width: 23px;
   height: 21px;
-  top: 3.3rem;
+  top: 2.3rem;
   right: 2rem;
 }
 .bar{
@@ -283,9 +278,6 @@ header {
 .active .list-item{
   padding: 0.5em;
 }
-.active .btn{
-  margin: 0.5rem;
-}
 .list-items{
   flex-direction: column;
   list-style: none;
@@ -306,11 +298,9 @@ header {
   position: absolute;
   display: flex;
   transform: translateX(-0%);
-  transition: transform 1s;
+  transition: transform 0.5s;
   width: 1080px;
-}
-.slider > li{
-  display: inline;
+  gap: 0.5rem;
 }
 .slider-dimensions{
   width: 270px;
@@ -347,6 +337,11 @@ button[data-index-change] {
 .lg-hidden{
   display: block;
 }
+.sticky{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
 
 @media screen and (max-width: 950px) {
   :root {
@@ -356,8 +351,11 @@ button[data-index-change] {
     --font-big: 40px;
     --font-bigger: 58px;
   }
-  .mw-45 {
+  .sm-mw-70 {
     max-width: 70%;
+  }
+  .container{
+    padding: 0.8rem;
   }
 }
 @media screen and (min-width: 1150px) {
@@ -376,7 +374,7 @@ button[data-index-change] {
     display: inline-block;
   }
   .brand-heading {
-    font-weight: var(--font-bolder);
+    font-weight: 700;
     font-size: var(--font-medium);
     color: var(--primary-blue);
   }
@@ -395,6 +393,9 @@ button[data-index-change] {
     align-items: center;
     justify-content: space-evenly;
     flex-direction: row;
+    position: absolute;
+    width: 100%;
+    background-color: var(--primary-white);
   }
 
 .card:hover{
