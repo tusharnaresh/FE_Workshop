@@ -17,15 +17,7 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <div class="modal" role="dialog">
-      <form action="#" class="form-container flex-center flex-column">
-        <input class="form-input" type="email" placeholder="Email" required aria-label="Enter your email" />
-        <span class="error"></span>
-        <input class="form-input" type="password" placeholder="Password" required aria-label="Enter your password" />
-        <span class="error"></span>
-        <button class="btn btn-accent">Log in</button>
-      </form>
-    </div>
+    
     <header class="sticky">
       <div class="container flex-center block-mobile">
         <div class="flex-center justify-start">
@@ -202,6 +194,15 @@
         </div>
       </section>
     </main>
+    <div class="modal flex-center flex-justify-center" role="dialog">
+      <form action="#" class="flex-center form-container">
+        <input class="form-input" type="email" placeholder="Email" required aria-label="Enter your email" />
+        <span class="error"></span>
+        <input class="form-input" type="password" placeholder="Password" required aria-label="Enter your password" />
+        <span class="error"></span>
+        <button class="btn btn-accent">Log in</button>
+      </form>
+    </div>
   </body>
   <script src="./index.js"></script>
 </html>
