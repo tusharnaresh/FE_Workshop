@@ -155,7 +155,9 @@ body {
   --btn-background-color: var(--primary-blue);
   --btn-text-color: var(--primary-white);
 }
-
+.btn:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
 /* general styles */
 header {
   background-color: var(--primary-white);
@@ -177,14 +179,20 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+.d-none{
+  display: none;
+}
 .flex-responsive {
   flex-direction: var(--flex-dir);
 }
 .flex-space-around {
   justify-content: space-around;
 }
-.flex-justify-center{
+.flex-justify-center {
   justify-content: center;
+}
+.flex-column{
+  flex-direction: column;
 }
 .flex-wrap {
   flex-wrap: wrap;
@@ -192,6 +200,9 @@ header {
 .flex-gap {
   justify-content: center;
   gap: 5rem;
+}
+.flex-gap-1{
+  gap: 1rem;
 }
 .justify-start {
   justify-content: start;
@@ -257,8 +268,8 @@ header {
   position: absolute;
   width: 23px;
   height: 21px;
-  top: 2.3rem;
-  right: 2rem;
+  top: 24px;
+  right: 32px;
 }
 .bar {
   height: 3px;
@@ -271,6 +282,9 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  position: absolute;
+  width: 100%;
+  background-color: var(--primary-white);
 }
 .active {
   display: flex;
@@ -285,7 +299,9 @@ header {
 .nav-btns {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
+
 .block-mobile {
   display: block;
 }
@@ -349,22 +365,28 @@ button[data-index-change] {
   position: fixed;
   top: 0;
   backdrop-filter: blur(15px);
-  opacity: 1;
   transition: opacity 0.5s ease-in-out;
+  display: none;
+}
+.modal-active{
+  display: flex;
 }
 .form-container {
   width: 75%;
-  padding: 70px;
-  background-color: rgba(0, 0, 0, 0.4);
+  max-height: 75%;
+  padding: 2% 5%;
+  background-color: white;
   flex-direction: column;
-  gap: 1rem;
+  gap: 10px;
+  border: 2px solid black;
+  position: relative;
+  justify-content: initial;
 }
 .form-input {
-  min-width: 50%;
+  max-width: 75%;
   outline: none;
 }
-input[type="password"],
-input[type="email"] {
+input {
   padding: 0.75em;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -372,12 +394,47 @@ input[type="email"] {
   transition: border-color 0.3s, box-shadow 0.3s;
   transition-timing-function: ease-in;
 }
-input[type="password"]:focus,
-input[type="email"]:focus {
+input:focus {
   border-color: #007bff;
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
 }
+.error {
+  opacity: 0;
+  color: #c80036;
+  height: 25px;
+}
+.close-button {
+  position: absolute;
+  right: 3%;
+  font-size: xx-large;
+  top: 0;
+  cursor: pointer;
+}
+.tooltip{
+  display: none;
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 12px;
+  width: 250px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-110%);
+}
 
+.password-group {
+  position: relative;
+  width: 100%;
+}
+
+.password-group:hover .tooltip {
+  display: block;
+}
+body:has(.modal.modal-active) {
+ overflow: hidden;
+}
 @media screen and (max-width: 950px) {
   :root {
     --font-small: 16px;
@@ -391,6 +448,11 @@ input[type="email"]:focus {
   }
   .container {
     padding: 0.8rem;
+  }
+}
+@media screen and (min-width: 600px) {
+  .form-container {
+    width: 50%;
   }
 }
 @media screen and (min-width: 1150px) {
@@ -428,9 +490,9 @@ input[type="email"]:focus {
     align-items: center;
     justify-content: space-evenly;
     flex-direction: row;
-    position: absolute;
-    width: 100%;
-    background-color: var(--primary-white);
+    position: relative;
+    background-color: initial;
+    width: initial;
   }
 
   .card:hover {
@@ -448,5 +510,16 @@ input[type="email"]:focus {
   }
   .lg-hidden {
     display: none;
+  }
+  .form-input {
+    min-width: 50%;
+  }
+  .form-container {
+    width: 30%;
+  }
+  .tooltip{
+    top: 25%;
+    left: 100%;
+    transform: translateY(-50%);
   }
 }
